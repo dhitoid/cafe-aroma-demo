@@ -34,35 +34,63 @@ section{
   padding:140px 0;
 }
 
-/* LOADER */
+/* CINEMATIC LOADER */
 
 .loader{
   position:fixed;
-  width:100%;
-  height:100vh;
-  background:#f6f2ed;
+  inset:0;
+  background:#111;
   display:flex;
   align-items:center;
   justify-content:center;
-  z-index:2000;
-  transition:opacity 0.8s ease, visibility 0.8s;
+  z-index:3000;
+  overflow:hidden;
 }
 
-.loader-text{
-  font-family:'Playfair Display';
-  font-size:32px;
-  letter-spacing:4px;
-  animation:fadeIn 2s ease;
+.loader-inner{
+  text-align:center;
+  color:white;
+}
+
+.loader-logo{
+  font-family:'Playfair Display',serif;
+  font-size:48px;
+  letter-spacing:6px;
+  opacity:0;
+  transform:translateY(40px);
+  animation:logoReveal 1.5s ease forwards;
+}
+
+.loader-line{
+  width:0%;
+  height:2px;
+  background:#b08968;
+  margin:20px auto 0;
+  animation:lineGrow 1.8s ease forwards;
+}
+
+@keyframes logoReveal{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes lineGrow{
+  to{
+    width:200px;
+  }
 }
 
 .loader.hide{
-  opacity:0;
-  visibility:hidden;
+  animation:loaderExit 1s ease forwards;
 }
 
-@keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
+@keyframes loaderExit{
+  to{
+    opacity:0;
+    visibility:hidden;
+  }
 }
 
 /* NAVBAR */
