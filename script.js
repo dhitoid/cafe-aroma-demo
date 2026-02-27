@@ -1,5 +1,7 @@
-window.addEventListener("load",()=>{
-  document.querySelector(".loader").classList.add("hide");
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.querySelector(".loader").classList.add("hide");
+  }, 2200);
 });
 
 const navbar = document.querySelector(".navbar");
