@@ -1,26 +1,28 @@
+window.addEventListener("load",()=>{
+  document.querySelector(".loader").classList.add("hide");
+});
+
 const navbar = document.querySelector(".navbar");
 
-window.addEventListener("scroll", () => {
-  if(window.scrollY > 50){
+window.addEventListener("scroll",()=>{
+  if(window.scrollY>50){
     navbar.classList.add("scrolled");
-  } else {
+  }else{
     navbar.classList.remove("scrolled");
   }
 });
 
-const reveals = document.querySelectorAll(".reveal");
+const reveals=document.querySelectorAll(".reveal");
 
 function revealOnScroll(){
-  const windowHeight = window.innerHeight;
-
+  const windowHeight=window.innerHeight;
   reveals.forEach(el=>{
-    const elementTop = el.getBoundingClientRect().top;
-
-    if(elementTop < windowHeight - 100){
+    const top=el.getBoundingClientRect().top;
+    if(top<windowHeight-100){
       el.classList.add("active");
     }
   });
 }
 
-window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("scroll",revealOnScroll);
 revealOnScroll();
